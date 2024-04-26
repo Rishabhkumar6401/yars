@@ -107,8 +107,8 @@
         <div id="home1-main-slider" class="owl-carousel owl-theme">
             <div class="item">
                 <figure>
-                    <img src="assets/img/slider/1.jpg" class="hidden-xs hidden-sm " alt="" />
-                    <img src="assets/img/slider/1xs.jpg" class="hidden-lg hidden-md" alt="" />
+                    <img src="assets/img/slider/1.webp" class="hidden-xs hidden-sm " alt="" />
+                    <img src="assets/img/slider/1xs.webp" class="hidden-lg hidden-md" alt="" />
                     <figcaption>
                         <div class="container">
                             <h2><span>Discover Your Perfect Bathing Experience with Yars</span></h2>
@@ -121,8 +121,8 @@
             </div>
             <div class="item">
                 <figure>
-                    <img src="assets/img/slider/2.jpg" class="hidden-xs hidden-sm " alt="" />
-                    <img src="assets/img/slider/2xs.jpg" class="hidden-lg hidden-md" alt="" />
+                    <img src="assets/img/slider/2.webp" class="hidden-xs hidden-sm " alt="" />
+                    <img src="assets/img/slider/2xs.webp" class="hidden-lg hidden-md" alt="" />
                     <figcaption>
                         <div class="container">
                             <h2><span>Explore Our Premier Bathware Selection</span></h2>
@@ -135,8 +135,8 @@
             </div>
             <div class="item">
                 <figure>
-                    <img src="assets/img/slider/3.jpg" class="hidden-xs hidden-sm" alt="" />
-                    <img src="assets/img/slider/3xs.jpg" class="hidden-lg hidden-md" alt="" />
+                    <img src="assets/img/slider/3.webp" class="hidden-xs hidden-sm" alt="" />
+                    <img src="assets/img/slider/3xs.webp" class="hidden-lg hidden-md" alt="" />
                     <figcaption>
                         <div class="container">
                             <h2><span> Explore Our Nature-Inspired Bathware Collection"</span></h2>
@@ -159,8 +159,8 @@
                     <div class="latest-collection-item">
                         <div class="wa-collection">
                             <div class="wa-collection-thumbnail item our-collection-item wa-item">
-                                <img src="assets/img/collection/1.jpg" class="hidden-xs" alt="" />
-                                <img src="assets/img/collection/1-xs.jpg" class="hidden-sm hidden-lg hidden-md"
+                                <img src="assets/img/collection/1.webp" class="hidden-xs" alt="" />
+                                <img src="assets/img/collection/1-xs.webp" class="hidden-sm hidden-lg hidden-md"
                                     alt="" />
                                 <div class="caption">
                                     <div class="caption-text">
@@ -181,8 +181,8 @@
                     <div class="latest-collection-item">
                         <div class="wa-collection">
                             <div class="wa-collection-thumbnail item our-collection-item wa-item">
-                                <img src="assets/img/collection/2.jpg" class="hidden-xs" alt="" />
-                                <img src="assets/img/collection/2-xs.jpg" class="hidden-sm hidden-lg hidden-md"
+                                <img src="assets/img/collection/2.webp" class="hidden-xs" alt="" />
+                                <img src="assets/img/collection/2-xs.webp" class="hidden-sm hidden-lg hidden-md"
                                     alt="" />
                                 <div class="caption">
                                     <div class="caption-text">
@@ -204,8 +204,8 @@
                     <div class="latest-collection-item">
                         <div class="wa-collection">
                             <div class="wa-collection-thumbnail item our-collection-item wa-item">
-                                <img src="assets/img/collection/3.jpg" class="hidden-xs" alt="" />
-                                <img src="assets/img/collection/3-xs.jpg" class="hidden-sm hidden-lg hidden-md"
+                                <img src="assets/img/collection/3.webp" class="hidden-xs" alt="" />
+                                <img src="assets/img/collection/3-xs.webp" class="hidden-sm hidden-lg hidden-md"
                                     alt="" />
                                 <div class="caption">
                                     <div class="caption-text">
@@ -226,8 +226,8 @@
                     <div class="latest-collection-item">
                         <div class="wa-collection">
                             <div class="wa-collection-thumbnail item our-collection-item wa-item">
-                                <img src="assets/img/collection/4.jpg" class="hidden-xs" alt="" />
-                                <img src="assets/img/collection/4-xs.jpg" class="hidden-sm hidden-lg hidden-md"
+                                <img src="assets/img/collection/4.webp" class="hidden-xs" alt="" />
+                                <img src="assets/img/collection/4-xs.webp" class="hidden-sm hidden-lg hidden-md"
                                     alt="" />
                                 <div class="caption">
                                     <div class="caption-text">
@@ -248,8 +248,8 @@
                     <div class="latest-collection-item">
                         <div class="wa-collection">
                             <div class="wa-collection-thumbnail item our-collection-item wa-item">
-                                <img src="assets/img/collection/5.jpg" class="hidden-xs" alt="" />
-                                <img src="assets/img/collection/5-xs.jpg" class="hidden-sm hidden-lg hidden-md"
+                                <img src="assets/img/collection/5.webp" class="hidden-xs" alt="" />
+                                <img src="assets/img/collection/5-xs.webp" class="hidden-sm hidden-lg hidden-md"
                                     alt="" />
                                 <div class="caption">
                                     <div class="caption-text">
@@ -330,7 +330,7 @@
                         <div class="latest-banners-item">
                             <div class="wa-banners">
                                 <div class="wa-banners-thumbnail item our-banners-item wa-item">
-                                    <img src="assets/img/banners/1.jpg" alt="">
+                                    <img src="assets/img/banners/1.webp" alt="">
                                     <div class="caption">
                                         <div class="caption-text">
                                             <div class="clear"></div>
@@ -354,7 +354,7 @@
                         <div class="latest-banners-item">
                             <div class="wa-banners">
                                 <div class="wa-banners-thumbnail item our-banners-item wa-item">
-                                    <img src="assets/img/banners/2.jpg" alt="">
+                                    <img src="assets/img/banners/2.webp" alt="">
                                     <div class="caption">
                                         <div class="caption-text">
                                             <div class="clear"></div>
@@ -434,7 +434,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <figure class="banners-border">
-                        <a href="products.php"><img src="assets/img/banners/3.jpg"
+                        <a href="products.php"><img src="assets/img/banners/3.webp"
                                 alt="Thumbnail"></a>
                     </figure>
                 </div>
@@ -464,7 +464,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/1.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/1.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -473,7 +473,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/2.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/2.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -482,7 +482,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/3.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/3.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -491,7 +491,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/4.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/4.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -500,7 +500,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/5.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/5.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -509,7 +509,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/6.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/6.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -518,7 +518,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/7.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/7.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>
@@ -527,7 +527,7 @@
                                 <div class="col-md-12">
                                     <div class="wa-theme-design-block">
                                         <figure class="dark-theme">
-                                            <img src="assets/img/partner/8.jpg" alt="Thumbnail">
+                                            <img src="assets/img/partner/8.webp" alt="Thumbnail">
                                         </figure>
                                     </div>
                                 </div>

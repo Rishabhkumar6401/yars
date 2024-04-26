@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Compress the uploaded image
         $target_dir = "uploads/";
-        $compressed_file_name = pathinfo($category_image, PATHINFO_FILENAME) . '_compressed.jpg';
+        $compressed_file_name = pathinfo($category_image, PATHINFO_FILENAME) . '_compressed.webp';
         $compressed_file_path = $target_dir . $compressed_file_name;
         if (!compressImage($_FILES["category_image"]["tmp_name"], $compressed_file_path)) {
             echo "<script>alert('Error occurred while compressing image')</script>";
