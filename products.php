@@ -1,20 +1,27 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="YARS - Html5 Template For Fauctes, Sanitary, Bathroom, Kitchen and Multipurpose E-commerce Store" />
+    <meta name="description"
+        content="YARS - Html5 Template For Fauctes, Sanitary, Bathroom, Kitchen and Multipurpose E-commerce Store" />
     <meta name="author" content="webaashi.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>YARS - Bathwares</title>
 
     <!-- Favicon -->
     <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"> -->
     <!-- Master Css -->
     <link href="main.css" rel="stylesheet">
     <link href="assets/css/color.css" rel="stylesheet" id="colors">
 </head>
+
 <body>
     <!--//==Preloader Start==//-->
     <div class="preloader loaderout">
@@ -25,11 +32,10 @@
             <h4 class="title">Loading</h4>
         </div>
     </div>
-    <!--//==Preloader End==//-->  
+    <!--//==Preloader End==//-->
     <!--//==Header Start==//-->
     <header id="main-header">
-        
-        <!--//==Topbar End==//-->
+
         <!--//==Navbar Start==//-->
         <div id="main-menu" class="wa-main-menu">
             <div class="wathemes-menu relative">
@@ -94,19 +100,19 @@
         <!--//==Navbar End==//-->
     </header>
     <!--//==Header End==//-->
-    <!--//==Page Header Start==//-->	  
+    <!--//==Page Header Start==//-->
     <div class="page-header black-overlay">
         <div class="container breadcrumb-section">
             <div class="row pad-s15">
                 <div class="col-md-12">
-                    <h2>Contact us</h2>
+                    <h2>Wide Range of Categories</h2>
                     <div class="clear"></div>
                     <div class="breadcrumb-box">
                         <ul class="breadcrumb">
                             <li>
                                 <a href="index.php">Home</a>
                             </li>
-                            <li class="active">Contact us</li>
+                            <li class="active">products </li>
                         </ul>
                     </div>
                 </div>
@@ -114,78 +120,84 @@
         </div>
     </div>
     <!--//==Page Header End==//-->
-    <!--//==Contact Page Start==//-->
-    <section class="page_single">
-        <!--//==Contact Form Section Start==//-->
+    <!--//=========product Page Start=========//-->
+    <?php
+// Include database connection
+        require 'db_connection.php';
+
+        // Constants for pagination
+        $categoriesPerPage = 12; // Number of categories to display per page
+        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Get current page number, default to 1 if not set
+
+        // Calculate the offset for fetching categories
+        $offset = ($page - 1) * $categoriesPerPage;
+
+        // Fetch categories from the database with pagination
+        $sql = "SELECT * FROM categories LIMIT :offset, :perPage";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(':perPage', $categoriesPerPage, PDO::PARAM_INT);
+        $stmt->execute();
+        $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Fetch total number of categories for pagination
+        $sqlCount = "SELECT COUNT(*) as total FROM categories";
+        $stmtCount = $pdo->query($sqlCount);
+        $totalCategories = $stmtCount->fetch(PDO::FETCH_ASSOC)['total'];
+        $totalPages = ceil($totalCategories / $categoriesPerPage);
+        ?>
+    <section class="wa-products-main padTB100">
         <div class="container">
-            <div class="row contact-bottom padTB100">
-                <!--//==Section Heading Start==//-->
-                <div class="col-md-12">
-                    <div class="centered-title">
-                        <h2>Get In Touch <span class="heading-border"></span></h2>
-                        <div class="clear"></div>
-                        <em>Connect with us to explore exclusive sanitaryware solutions tailored to your needs. Elevate your bathroom with our premium range, blending elegance and innovation for a truly indulgent experience.</em>
-                        <div class="clear"></div>
+            <div class="row">
+                <!--//=========Product Sorting Section Start=========//-->
+                <!--//=========Product Sorting Section End=========//-->
+                <!--product Item-->
+                <?php foreach ($categories as $category): ?>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 mix">
+                        <a href="product.php?category_id=<?php echo $category['category_id']; ?>">
+                            <div class="wa-products">
+                                <div class="wa-products-thumbnail wa-item">
+                                    <img src="uploads/<?php echo $category['category_image']; ?>"
+                                        alt="<?php echo $category['category_name']; ?>" style="max-height:400px; min-height:400px;">
+                                </div>
+                                <div class="wa-products-caption">
+                                    <h2>
+                                        <a href="product.php?category_id=<?php echo $category['category_id']; ?>">
+                                            <?php echo $category['category_name']; ?>
+                                        </a>
+                                    </h2>
+                                    <div class="clear"></div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <!--//==Section Heading End==//-->
-                <!--//==Form Area Start==//-->
-                <div class="col-md-12 left-box">
-                    <form id="fashion_contactform" method="post" action="submit.php">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Your Name<span class="required red-text">*</span></label>
-                                    <input type="text" name="name" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Your Email<span class="required red-text">*</span></label>
-                                    <input type="email" name="email" id="exampleInputEmail1" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Your Number</label>
-                                    <input type="text" name="phone" id="exampleInputPhone" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Your city</label>
-                                    <input type="text" name="city" id="exampleInputWebsite">
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Your Message<span class="required red-text">*</span></label>
-                                    <textarea name="Message" class="textarea-message" rows="10" required></textarea>	
-                                </div>
-                            </div>
-                            <div class="col-sm-12 form-group">
-                                <input type="submit" class="theme-button" value="Send Message">
-                                <div class="fashion_infotext"></div>
+                <?php endforeach; ?>
+                <!--product Item-->
+
+                <div class="clear"></div>
+                    <?php if ($totalPages > 1): ?>
+                        <div class="col-md-12">
+                            <div class="styled-pagination padB30 text-center">
+                                <ul>
+                                    <?php if ($page > 1): ?>
+                                        <li><a class="prev" href="?page=<?php echo $page - 1; ?>"><i class="fa fa-angle-left"></i></a></li>
+                                    <?php endif; ?>
+                                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                        <li><a href="?page=<?php echo $i; ?>" <?php echo ($page == $i) ? 'class="active"' : ''; ?>><?php echo $i; ?></a></li>
+                                    <?php endfor; ?>
+                                    <?php if ($page < $totalPages): ?>
+                                        <li><a class="next" href="?page=<?php echo $page + 1; ?>"><i class="fa fa-angle-right"></i></a></li>
+                                    <?php endif; ?>
+                                </ul>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <!--//==Form Area End==//-->
+                    <?php endif; ?>
+
             </div>
         </div>
-        <!--//==Contact Form Section End==//-->
-        <!--//==Contact Map Section Start==//-->
-        <div class="col-md-12 col-sm-12">
-            <div class="row">
-                <div class="map-area">
-                    <div id="gmap_canvas" class="maps"><div style="height: 100%; width: 100%;"></div></div>
-                </div>
-            </div>
-        </div>
-        <!--//==Contact Map Section End==//-->			
     </section>
-    <!--//==Contact Page End==//-->
+    <!--//=========product Page End=========//-->
     <!--//=========Footer Start=========//-->
     <footer id="main-footer" class="dark-footer footer-style1">
         <!--Upper Footer Block-->
@@ -252,26 +264,33 @@
             </div>
         </div>
     </footer>
-    <!--//=========Footer End=========//-->	 		
-    <!--//=========Newsletter Popup Start =========//-->	 
-    
-    <!--//=========Newsletter Popup End=========//-->	   
-   
+    <!--//=========Footer End=========//-->
+    <!--//=========Newsletter Popup Start =========//-->
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/menu/js/hover-dropdown-menu.js"></script> 
-    <script type="text/javascript" src="assets/plugins/menu/js/jquery.hover-dropdown-menu-addon.js"></script>	
-    <script src="assets/plugins/owl-carousel/js/owl.carousel.js"></script> 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyApOXiWaaV5Xv4Wgjns-dDzNV-sMGf58O8"></script>	  
-    <script type="text/javascript" src="assets/plugins/switcher/switcher.js"></script>   
+    <script type="text/javascript" src="assets/plugins/menu/js/hover-dropdown-menu.js"></script>
+    <script type="text/javascript" src="assets/plugins/menu/js/jquery.hover-dropdown-menu-addon.js"></script>
+    <script src="assets/plugins/owl-carousel/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="assets/plugins/switcher/switcher.js"></script>
     <script src="assets/js/main.js"></script>
 
-</body><style>
-@media print {
-#simplifyJobsContainer {
-display: none;
-}
-}
-</style><div id="simplifyJobsContainer" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: visible; z-index: 2147483647;"><span></span></div><script id="simplifyJobsPageScript" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script></html>
+</body>
+<style>
+    @media print {
+        #simplifyJobsContainer {
+            display: none;
+        }
+    }
+</style>
+<div id="simplifyJobsContainer"
+    style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: visible; z-index: 2147483647;">
+    <span></span>
+</div>
+<script id="simplifyJobsPageScript"
+    src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script>
+
+</html>

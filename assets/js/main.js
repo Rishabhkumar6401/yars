@@ -242,22 +242,21 @@ function checkoutPageEffect() {
 
 function initMap() {
 
-
     if ($('#gmap_canvas').length) {
         var myOptions = {
-            zoom: 10,
+            zoom: 13,
             scrollwheel: false,
             draggable: true,
-            center: new google.maps.LatLng(-37.81614570000001, 144.95570680000003),
+            center: new google.maps.LatLng(28.834021819046527, 78.75535510029233),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
         var marker = new google.maps.Marker({
             map: map,
-            position: new google.maps.LatLng(-37.81614570000001, 144.95570680000003)
+            position: new google.maps.LatLng(28.834021819046527, 78.75535510029233)
         });
         var infowindow = new google.maps.InfoWindow({
-            content: '<strong>Envato</strong><br>Envato, King Street, Melbourne, Victoria<br>'
+            content: '<strong>YARS</strong><br>Shivaji Nagar, Linepar, Moradabad<br>'
         });
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
