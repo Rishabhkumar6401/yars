@@ -618,7 +618,7 @@
                             </p>
                             <p><span class="rounded-icon"><i class="fa fa-phone"></i></span>+91 9456688608
                             </p>
-                            <p><span class="rounded-icon"><i class="fa fa-envelope-o"></i></span>gargstores@gmail.com
+                            <p><span class="rounded-icon"><i class="fa fa-envelope-o"></i></span>Yarsbathware@gmail.com
                             </p>
                         </div>
                     </div>
