@@ -21,6 +21,42 @@ while ($row = $result_categories->fetch(PDO::FETCH_ASSOC)) {
     $categories[] = $row;
 }
 
+// Compress image function
+function compressImage($inputFilePath, $outputFilePath, $quality = 75) {
+    // Get image details
+    list($width, $height, $type) = getimagesize($inputFilePath);
+
+    // Create image resource based on image type
+    switch ($type) {
+        case IMAGETYPE_JPEG:
+            $image = imagecreatefromjpeg($inputFilePath);
+            break;
+        case IMAGETYPE_PNG:
+            $image = imagecreatefrompng($inputFilePath);
+            break;
+        case IMAGETYPE_GIF:
+            $image = imagecreatefromgif($inputFilePath);
+            break;
+        case IMAGETYPE_WEBP:
+            $image = imagecreatefromwebp($inputFilePath);
+            // Save the WebP image without compression
+            imagewebp($image, $outputFilePath);
+            imagedestroy($image);
+            return true;
+        default:
+            // Unsupported image type
+            return false;
+    }
+
+    // Compress the image for JPEG, PNG, and GIF
+    imagejpeg($image, $outputFilePath, $quality);
+
+    // Free up memory
+    imagedestroy($image);
+
+    return true;
+}
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate product name
@@ -83,7 +119,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $target_dir = "uploads/";
                 $target_file = $target_dir . $product_image;
                 move_uploaded_file($_FILES["product_image"]["tmp_name"], $target_file);
-                
+
+                // Compress the image
+                $compressed_file = $target_dir . 'compressed_' . $product_image;
+                if (compressImage($target_file, $compressed_file)) {
+                    // Remove the original uploaded image
+                    unlink($target_file);
+                    // Rename the compressed image to the original image name
+                    rename($compressed_file, $target_file);
+                }
+
                 // Redirect to dashboard
                 header("location: dashboard.php");
                 exit();
